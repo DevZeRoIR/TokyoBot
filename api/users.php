@@ -364,7 +364,7 @@ function usr_send_message(array $data, string $method): void
         sendJsonResponse(false, "file invalid", [], 200);
     }
 
-    $tempBase = tempnam(sys_get_temp_dir(), 'mirza_');
+    $tempBase = tempnam(sys_get_temp_dir(), 'tokyo_');
     if ($tempBase === false) {
         sendJsonResponse(false, "unable to store uploaded file", [], 500);
     }
@@ -630,7 +630,7 @@ function usr_active_bot_agent(array $data, string $method): void
     }
     $new_code = str_replace('BotTokenNew', $data['token'], $contentconfig);
     file_put_contents($dirsource . "/config.php", $new_code);
-    file_get_contents("https://api.telegram.org/bot{$data['token']}/setwebhook?url=https://$domainhosts/vpnbot/{$data['chat_id']}{$botUsername}/index.php");
+    file_get_contents("https://api.telegram.org/bot{$data['token']}/setwebhook?url=https://$domainhosts:88/vpnbot/{$data['chat_id']}{$botUsername}/index.php");
     file_get_contents(sprintf($textbotlang['Admin']['agentbot']['activatedUrl'], $data['token'], $data['chat_id']));
     $datasetting = json_encode(array(
         "minpricetime" => 4000,

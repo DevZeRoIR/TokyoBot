@@ -678,7 +678,7 @@ if (in_array($text, $textadmin) || $datain == "admin") {
         savedata("save", "username", "null");
         savedata("save", "password", "null");
         return;
-    } elseif ($userdata['type'] == "s_ui" || $userdata['type'] == "WGDashboard" || $userdata['type'] == "x-ui_single" || $userdata['type'] == "mirza_agent" || $userdata['type'] == "rebecca") {
+    } elseif ($userdata['type'] == "s_ui" || $userdata['type'] == "WGDashboard" || $userdata['type'] == "x-ui_single" || $userdata['type'] == "tokyo_agent" || $userdata['type'] == "rebecca") {
         sendmessage($from_id, $textbotlang['Admin']['agentbot']['askToken'], $backadmin, 'HTML');
         step('add_password_panel', $from_id);
         savedata("save", "username", "null");
@@ -1929,7 +1929,7 @@ elseif ($datain == "systemsms") {
                     error_log('Unable to locate crontab executable; cannot remove lottery cron job.');
                 } else {
                     $currentCronJobs = runShellCommand(sprintf('%s -l 2>/dev/null', escapeshellarg($crontabBinary)));
-                    $jobToRemove = "*/1 * * * * curl https://$domainhosts/cronbot/lottery.php";
+                    $jobToRemove = "*/1 * * * * curl https://$domainhosts:88/cronbot/lottery.php";
                     $newCronJobs = preg_replace('/' . preg_quote($jobToRemove, '/') . '/', '', (string) $currentCronJobs);
                     $tempCronFile = tempnam(sys_get_temp_dir(), 'cron');
                     if ($tempCronFile === false) {
@@ -1942,7 +1942,7 @@ elseif ($datain == "systemsms") {
                 }
             $valuenew = "0";
         } else {
-            $phpFilePath = "https://$domainhosts/cronbot/lottery.php";
+            $phpFilePath = "https://$domainhosts:88/cronbot/lottery.php";
             $cronCommand = "*/1 * * * * curl $phpFilePath";
             if (!addCronIfNotExists($cronCommand)) {
                 error_log('Unable to register lottery cron job because shell_exec is unavailable.');
@@ -3596,8 +3596,8 @@ elseif ($datain == "systemsms") {
             $message = strtr($text_x_ui, $replace);
             sendmessage($from_id, $message, $optionX_ui_single, 'HTML');
         }
-    } elseif ($marzban_list_get['type'] == "mirza_agent") {
-        sendmessage($from_id, $textbotlang['users']['selectoption'], $option_mirza, 'HTML');
+    } elseif ($marzban_list_get['type'] == "tokyo_agent") {
+        sendmessage($from_id, $textbotlang['users']['selectoption'], $option_tokyo, 'HTML');
     } elseif ($marzban_list_get['type'] == "alireza_single") {
         $x_ui_check_connect = login($marzban_list_get['code_panel'], false);
         if ($x_ui_check_connect['success']) {
@@ -6133,7 +6133,7 @@ if ($datain == "settimecornremove" && $adminrulecheck['rule'] == "administrator"
     $token = bin2hex(random_bytes(16));
     file_put_contents('api/hash.txt', $token);
     sendmessage($from_id, sprintf($textbotlang['Admin']['api']['token'], $token), null, 'HTML');
-    $apiDocsUrl = "https://$domainhostsEscaped/api/index.html";
+    $apiDocsUrl = "https://$domainhostsEscaped:88/api/index.html";
     sendmessage($from_id, sprintf($textbotlang['Admin']['api']['docsLink'], $apiDocsUrl), null, 'HTML');
 } elseif ($text == $textbotlang['keyboard']['activateWebPanel'] && $adminrulecheck['rule'] == "administrator") {
     $admin_select = select("admin", "*", "id_admin", $from_id, "select");
@@ -9502,7 +9502,7 @@ if (isset($update["inline_query"])) {
     $contentconfig = file_get_contents($dirsource . "/config.php");
     $new_code = str_replace('BotTokenNew', $userdate['token'], $contentconfig);
     file_put_contents($dirsource . "/config.php", $new_code);
-    file_get_contents("https://api.telegram.org/bot{$userdate['token']}/setwebhook?url=https://$domainhosts/vpnbot/{$userdate['id_user']}{$userdate['username']}/index.php");
+    file_get_contents("https://api.telegram.org/bot{$userdate['token']}/setwebhook?url=https://$domainhosts:88/vpnbot/{$userdate['id_user']}{$userdate['username']}/index.php");
     file_get_contents(sprintf($textbotlang['Admin']['agentbot']['activatedUrlAlt'], $userdate['token'], $userdate['id_user']));
     $datasetting = json_encode(array(
         "minpricetime" => 4000,
@@ -10553,7 +10553,7 @@ if ($datain == "settimecornday" && $adminrulecheck['rule'] == "administrator") {
     }
     sendmessage($from_id, $textbotlang['Admin']['agentbot']['webhookRunning'], null, 'HTML');
     foreach ($bots_agent as $bot) {
-        file_get_contents("https://api.telegram.org/bot{$bot['bot_token']}/setwebhook?url=https://$domainhosts/vpnbot/{$bot['id_user']}{$bot['username']}/index.php");
+        file_get_contents("https://api.telegram.org/bot{$bot['bot_token']}/setwebhook?url=https://$domainhosts:88/vpnbot/{$bot['id_user']}{$bot['username']}/index.php");
     }
     sendmessage($from_id, $textbotlang['Admin']['agentbot']['webhookDone'], null, 'HTML');
 } elseif (preg_match('/statuscronuser-(.*)/', $datain, $dataget)) {
@@ -10918,16 +10918,16 @@ if ($datain == "settimecornday" && $adminrulecheck['rule'] == "administrator") {
     $list_panel_keyboard = ['inline_keyboard' => []];
     foreach ($list_panel as $result) {
         $list_panel_keyboard['inline_keyboard'][] = [
-            ['text' => $result['name_panel'], 'callback_data' => "set_panel_id_mirza:{$result['id']}:{$panel['id']}"],
+            ['text' => $result['name_panel'], 'callback_data' => "set_panel_id_tokyo:{$result['id']}:{$panel['id']}"],
         ];
     }
     sendmessage($from_id, $textbotlang['Admin']['addorder']['selectPanel'], json_encode($list_panel_keyboard), 'HTML');
-} elseif (preg_match('/set_panel_id_mirza:(.*):(.*)/', $datain, $dataget)) {
-    $panel_id_mirza = $dataget[1];
+} elseif (preg_match('/set_panel_id_tokyo:(.*):(.*)/', $datain, $dataget)) {
+    $panel_id_tokyo = $dataget[1];
     $panel_id = $dataget[2];
     deletemessage($from_id, $message_id);
-    update("marzban_panel", "inbounds", $panel_id_mirza, "id", $panel_id);
-    sendmessage($from_id, $textbotlang['Admin']['addorder']['panelSelected'], $option_mirza, 'HTML');
+    update("marzban_panel", "inbounds", $panel_id_tokyo, "id", $panel_id);
+    sendmessage($from_id, $textbotlang['Admin']['addorder']['panelSelected'], $option_tokyo, 'HTML');
 } elseif ($text == $textbotlang['bottext']['open_button']) {
     $bt_home = strtr($textbotlang['bottext']['home_text'], ['{lang}' => $textbotlang['bottext']['langs'][$user['lang']] ?? $bt_lang]);
     sendmessage($from_id, $bt_home, keyboard_list_text($user['lang']), 'HTML');

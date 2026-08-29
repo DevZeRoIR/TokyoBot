@@ -10,7 +10,7 @@ require_once __DIR__ . '/WGDashboard.php';
 require_once __DIR__ . '/s_ui.php';
 require_once __DIR__ . '/ibsng.php';
 require_once __DIR__ . '/mikrotik.php';
-require_once __DIR__ . '/mirza_agent.php';
+require_once __DIR__ . '/tokyo_agent.php';
 require_once __DIR__ . '/Rebecca.php';
 
 class ManagePanel
@@ -377,9 +377,9 @@ class ManagePanel
                 $Output['subscription_url'] = $password;
                 $Output['configs'] = [];
             }
-        } elseif ($Get_Data_Panel['type'] == "mirza_agent") {
+        } elseif ($Get_Data_Panel['type'] == "tokyo_agent") {
             //create user
-            $ConnectToPanel = create_user_mirza($Get_Data_Panel, $data_limit / pow(1024, 3), $expire == 0 ? 0 : ($expire - time()) / 86400, $usernameC);
+            $ConnectToPanel = create_user_tokyo($Get_Data_Panel, $data_limit / pow(1024, 3), $expire == 0 ? 0 : ($expire - time()) / 86400, $usernameC);
             if (!empty($ConnectToPanel['status']) && $ConnectToPanel['status'] != 200) {
                 return array(
                     'status' => 'Unsuccessful',
@@ -979,8 +979,8 @@ class ManagePanel
                     'sub_last_user_agent' => null,
                 );
             }
-        } elseif ($Get_Data_Panel['type'] == "mirza_agent") {
-            $UsernameData = get_user_data_mirza($Get_Data_Panel, $username);
+        } elseif ($Get_Data_Panel['type'] == "tokyo_agent") {
+            $UsernameData = get_user_data_tokyo($Get_Data_Panel, $username);
             if (!empty($UsernameData['error'])) {
                 $Output = array(
                     'status' => 'Unsuccessful',
@@ -1260,8 +1260,8 @@ class ManagePanel
                     'subscription_url' => $url_sub,
                 );
             }
-        } elseif ($Get_Data_Panel['type'] == "mirza_agent") {
-            $revoke_sub = revoke_service_mirza($Get_Data_Panel, $username);
+        } elseif ($Get_Data_Panel['type'] == "tokyo_agent") {
+            $revoke_sub = revoke_service_tokyo($Get_Data_Panel, $username);
             if (!empty($revoke_sub['error'])) {
                 $Output = array(
                     'status' => 'Unsuccessful',
@@ -1455,8 +1455,8 @@ class ManagePanel
                     'username' => $username,
                 );
             }
-        } elseif ($Get_Data_Panel['type'] == "mirza_agent") {
-            $UsernameData = remove_service_mirza($Get_Data_Panel, $username);
+        } elseif ($Get_Data_Panel['type'] == "tokyo_agent") {
+            $UsernameData = remove_service_tokyo($Get_Data_Panel, $username);
             if (isset($UsernameData['error'])) {
                 $Output = array(
                     'status' => 'Unsuccessful',
@@ -2038,7 +2038,7 @@ class ManagePanel
             return array(
                 'status' => true
             );
-        } elseif ($panel['type'] == "mirza_agent") {
+        } elseif ($panel['type'] == "tokyo_agent") {
             return array(
                 'status' => true,
                 'msg' => 'successful'
@@ -2241,8 +2241,8 @@ class ManagePanel
                 "volume" => $data_limit_new,
                 "expiry" => $time_new
             );
-        } elseif ($panel['type'] == "mirza_agent") {
-            $extend = extend_service_mirza($panel, $new_limit, $time_day, $username);
+        } elseif ($panel['type'] == "tokyo_agent") {
+            $extend = extend_service_tokyo($panel, $new_limit, $time_day, $username);
             if (!in_array($extend['status'], [200, 400])) {
                 return array(
                     'status' => false,
@@ -2375,8 +2375,8 @@ class ManagePanel
             $data = array(
                 "volume" => $new_limit,
             );
-        } elseif ($panel['type'] == "mirza_agent") {
-            $volume_add = add_volume_service_mirza($panel, $limit_volume_new, $username_account);
+        } elseif ($panel['type'] == "tokyo_agent") {
+            $volume_add = add_volume_service_tokyo($panel, $limit_volume_new, $username_account);
             if (!in_array($volume_add['status'], [200, 400])) {
                 return array(
                     'status' => false,
@@ -2512,9 +2512,9 @@ class ManagePanel
             $data = array(
                 "expiry" => $new_limit,
             );
-        } elseif ($panel['type'] == "mirza_agent") {
+        } elseif ($panel['type'] == "tokyo_agent") {
             $new_limit = $limit_time_new;
-            $time_add = add_time_service_mirza($panel, $new_limit, $username_account);
+            $time_add = add_time_service_tokyo($panel, $new_limit, $username_account);
             if (!in_array($time_add['status'], [200, 400])) {
                 return array(
                     'status' => false,

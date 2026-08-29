@@ -1,282 +1,982 @@
 <div align="center">
 
-# 🤖 Mirza Bot
+# 🤖 Tokyo Bot
 
-### A powerful Telegram bot for selling VPN services — with fully automated config creation.
+### Telegram-Based VPN Sales, Subscription & Panel Management Platform
+
+**Tokyo Bot** is a powerful and extensible Telegram platform for managing **VPN sales, subscriptions, users, payments, panels, configurations, resellers, and automation** from a single ecosystem.
 
 <p>
-  <a href="https://t.me/mirzapanel">
+  <a href="https://github.com/DevZeRoIR/TokyoBot">
+    <img src="https://img.shields.io/badge/GitHub-TokyoBot-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+  <a href="https://t.me/tokyosvc">
     <img src="https://img.shields.io/badge/Telegram-Channel-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Channel"/>
   </a>
-  <a href="https://t.me/mirzapanelgroup">
-    <img src="https://img.shields.io/badge/Telegram-Group-229ED9?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Group"/>
+  <a href="https://t.me/tokyosvc">
+    <img src="https://img.shields.io/badge/Telegram-Community-229ED9?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Community"/>
   </a>
 </p>
 
 <p>
-  <a href="https://github.com/mahdiMGF2/mirzabot/stargazers">
-    <img src="https://img.shields.io/github/stars/mahdiMGF2/mirzabot?style=flat-square&color=f5c518" alt="Stars"/>
+  <img src="https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=flat-square&logo=php&logoColor=white" alt="PHP"/>
+  <img src="https://img.shields.io/badge/Ubuntu-22.04%20%7C%2024.04-E95420?style=flat-square&logo=ubuntu&logoColor=white" alt="Ubuntu"/>
+  <img src="https://img.shields.io/badge/Apache-2.4-D22128?style=flat-square&logo=apache&logoColor=white" alt="Apache"/>
+  <img src="https://img.shields.io/badge/MySQL-8.x-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL"/>
+  <img src="https://img.shields.io/badge/Telegram-Mini%20App-26A5E4?style=flat-square&logo=telegram&logoColor=white" alt="Telegram Mini App"/>
+</p>
+
+<p>
+  <a href="https://github.com/DevZeRoIR/TokyoBot/stargazers">
+    <img src="https://img.shields.io/github/stars/DevZeRoIR/TokyoBot?style=flat-square&color=f5c518" alt="Stars"/>
   </a>
-  <a href="https://github.com/mahdiMGF2/mirzabot/network/members">
-    <img src="https://img.shields.io/github/forks/mahdiMGF2/mirzabot?style=flat-square" alt="Forks"/>
+  <a href="https://github.com/DevZeRoIR/TokyoBot/network/members">
+    <img src="https://img.shields.io/github/forks/DevZeRoIR/TokyoBot?style=flat-square" alt="Forks"/>
   </a>
-  <a href="https://github.com/mahdiMGF2/mirzabot/issues">
-    <img src="https://img.shields.io/github/issues/mahdiMGF2/mirzabot?style=flat-square" alt="Issues"/>
+  <a href="https://github.com/DevZeRoIR/TokyoBot/issues">
+    <img src="https://img.shields.io/github/issues/DevZeRoIR/TokyoBot?style=flat-square" alt="Issues"/>
   </a>
-  <a href="https://github.com/mahdiMGF2/mirzabot/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/mahdiMGF2/mirzabot?style=flat-square" alt="License"/>
+  <a href="https://github.com/DevZeRoIR/TokyoBot/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/DevZeRoIR/TokyoBot?style=flat-square" alt="License"/>
   </a>
-  <img src="https://img.shields.io/badge/PHP-8.2-777BB4?style=flat-square&logo=php&logoColor=white" alt="PHP 8.2"/>
 </p>
 
 </div>
 
 ---
 
-## 📚 Table of Contents
+## 📌 Table of Contents
 
-- [✨ Overview](#-overview)
-- [🧩 Supported Panels](#-supported-panels)
-- [💳 Payment Gateways](#-payment-gateways)
-- [⚙️ Features](#️-features)
-- [🚀 Installation](#-installation)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Update](#update)
-  - [Remove](#remove)
-  - [Non-Interactive (CLI) Usage](#non-interactive-cli-usage)
-- [💎 Free vs. Pro](#-free-vs-pro)
-- [🌍 Languages](#-languages)
-- [💵 Support the Project](#-support-the-project)
-- [👥 Contributors](#-contributors)
+* [✨ Overview](#-overview)
+* [🚀 Why Tokyo](#-why-tokyo)
+* [🧩 Supported Panels](#-supported-panels)
+* [💳 Payment Methods](#-payment-methods)
+* [⚙️ Features](#️-features)
 
----
-
-## ✨ Overview
-
-**Mirza Bot** is a feature-rich Telegram bot for selling VPN subscriptions and automating the entire sales workflow — from purchase and payment to config creation and service management.
-
-It connects directly to your panels, builds configurations automatically, accepts a wide range of payment methods, and gives both customers and admins a clean experience through a **Telegram Mini App** and a **web admin panel**.
-
-> Whether you're handing out trial accounts or running a large-scale reseller business, Mirza Bot has the tools to run it end to end.
-
----
-
-## 🧩 Supported Panels
-
-Mirza Bot integrates with the most popular VPN and network management panels:
-
-| Panel | Panel |
-|-------|-------|
-| 🟢 **Marzban** | 🟢 **Marzneshin** |
-| 🟢 **Sanaei / Alireza** |
-| 🟢 **S-UI** | 🟢 **Hiddify** |
-| 🟢 **WGDashboard** (WireGuard) | 🟢 **MikroTik** |
-| 🟢 **IBSng** | 🟢 **Pasarguard** |
-
-> Configs are generated automatically and are compatible with all common protocols.
+  * [Sales & Subscriptions](#sales--subscriptions)
+  * [User Experience](#user-experience)
+  * [Reseller & Affiliate](#reseller--affiliate)
+  * [Administration](#administration)
+  * [Automation](#automation)
+* [📱 Telegram Mini App](#-telegram-mini-app)
+* [🏗️ Architecture](#️-architecture)
+* [🔐 Security](#-security)
+* [🚀 Installation](#-installation)
+* [🧰 CLI Usage](#-cli-usage)
+* [🔄 Update](#-update)
+* [🗑️ Removal](#️-removal)
+* [🔒 Webhook & SSL](#-webhook--ssl)
+* [🗄️ Database & Backup](#️-database--backup)
+* [🌍 Languages](#-languages)
+* [🛠️ Configuration](#️-configuration)
+* [🧪 Development](#-development)
+* [🤝 Contributing](#-contributing)
+* [🐞 Support & Issues](#-support--issues)
+* [👥 Community](#-community)
+* [📄 License](#-license)
 
 ---
 
-## 💳 Payment Gateways
+# ✨ Overview
 
-| Gateway | Type |
-|---------|------|
-| 💵 **Card-to-Card** | Manual (receipt + admin approval) |
-| 🪙 **NowPayments** | Crypto |
-| 🪙 **Plisio** | Crypto |
-| 🪙 **cubpay** | TRON / crypto |
-| 🇮🇷 **Zarinpal** | Online gateway |
-| 🇮🇷 **Aqayepardakht** | Online gateway |
-| 🇮🇷 **IranPay** | Online gateway |
+**Tokyo Bot** is an all-in-one Telegram platform created for businesses that sell VPN and network services.
 
----
+It connects your **Telegram bot**, **Telegram Mini App**, **VPN management panels**, **payment systems**, **database**, and **administration tools** into one centralized environment.
 
-## ⚙️ Features
+Instead of manually handling orders, payments, configuration creation, renewals, traffic purchases, and customer management, Tokyo automates the complete workflow.
 
-### 🛒 Sales & Configuration
-- ✅ VPN purchase with **fully automated** config creation
-- ✅ Trial / test accounts for new users
-- ✅ Compatibility with all common protocols
-- ✅ QR codes for fast config import
-- ✅ Protocol-based configuration settings
-- ✅ Product, panel & gateway management
+### The typical workflow
 
-### 👤 User Experience
-- ✅ **Telegram Mini App** for a modern, in-app interface
-- ✅ View & manage purchased services:
-  - Renew a service
-  - Buy additional volume
-  - Retrieve config / update subscription links
-- ✅ Wallet & balance system
-- ✅ Detailed purchase & trial reports
-- ✅ Support section, FAQ & customizable tutorials
-- ✅ Phone-number verification
-- ✅ Mandatory channel membership for purchases
+```text
+                  ┌─────────────────────┐
+                  │      CUSTOMER       │
+                  └──────────┬──────────┘
+                             │
+                             ▼
+                  ┌─────────────────────┐
+                  │   Telegram Bot /    │
+                  │    Mini App         │
+                  └──────────┬──────────┘
+                             │
+               ┌─────────────┼─────────────┐
+               │             │             │
+               ▼             ▼             ▼
+        ┌────────────┐ ┌────────────┐ ┌────────────┐
+        │  Products  │ │  Payments  │ │  Wallet    │
+        └─────┬──────┘ └─────┬──────┘ └─────┬──────┘
+              │              │              │
+              └──────────────┼──────────────┘
+                             ▼
+                  ┌─────────────────────┐
+                  │     Tokyo Core      │
+                  └──────────┬──────────┘
+                             │
+             ┌───────────────┼────────────────┐
+             │               │                │
+             ▼               ▼                ▼
+      ┌────────────┐  ┌────────────┐   ┌────────────┐
+      │ VPN Panels │  │  Database  │   │ Admin      │
+      │ / APIs     │  │   MySQL    │   │ Dashboard  │
+      └────────────┘  └────────────┘   └────────────┘
+```
 
-### 📈 Growth & Marketing
-- ✅ Affiliate / referral system
-- ✅ Cashback rewards
-- ✅ Discount codes
-- ✅ Gift codes
-- ✅ Lottery system
-- ✅ **Agent / reseller** system
+Tokyo is designed to handle the complete lifecycle:
 
-### 🛠️ Administration
-- ✅ **Web admin panel** (login-protected dashboard)
-- ✅ Multiple admins support
-- ✅ Balance & user management
-- ✅ Full text/message customization from the bot
-- ✅ Configurable username-generation methods
-- ✅ Automatic backups
-- ✅ Notification & expiry-reminder services (cron)
-- ✅ On-hold configurations
+**Browse → Purchase → Pay → Create Config → Deliver → Manage → Renew**
 
 ---
 
-## 🚀 Installation
+# 🚀 Why Tokyo?
 
-### Prerequisites
+### ⚡ Automation First
 
-| Requirement | Details |
-|-------------|---------|
-| 🖥️ **OS** | A **clean** Ubuntu **22.04** or **24.04** server |
-| 🌐 **Domain** | A domain name pointed to your server's IP |
-| ⚙️ **Stack** | PHP 8.2, Apache, MySQL, SSL — *installed automatically by the script* |
+Tokyo is designed to remove repetitive manual operations from VPN businesses.
 
-> 💡 Start from a fresh server with no existing web server, database, or panel installed.
+Automate:
 
-### Install
+* Product sales
+* Payment processing
+* Configuration creation
+* Service delivery
+* Renewals
+* Traffic purchases
+* Expiry notifications
+* Customer notifications
+* Database backups
+* Reseller operations
 
-Run the following command on your server as **root**:
+### 📱 Telegram Native
+
+Customers can interact with the entire system directly inside Telegram.
+
+No separate customer portal is required for the main workflow.
+
+### 🧩 Multi-Panel
+
+Tokyo supports multiple VPN and networking panels from a single management platform.
+
+### 💳 Multi-Payment
+
+Use multiple payment methods in the same installation, including manual payment, cryptocurrency, local gateways, offline payments, and Telegram Stars.
+
+### 👑 Reseller Ready
+
+Tokyo includes tools for managing agents, resellers, referrals, cashback, balances, products, and customers.
+
+---
+
+# 🧩 Supported Panels
+
+Tokyo supports a broad range of VPN, networking, and subscription management panels.
+
+## VPN & Subscription Panels
+
+| Panel                               |    Status   |
+| ----------------------------------- | :---------: |
+| 🟢 **Marzneshin**                   | ✅ Supported |
+| 🟢 **Marzban**                      | ✅ Supported |
+| 🟢 **Pasarguard**                   | ✅ Supported |
+| 🟢 **Tokyo Panel / Tokyo Reseller** | ✅ Supported |
+| 🟢 **3x-UI / Sanaei**               | ✅ Supported |
+| 🟢 **Alireza**                      | ✅ Supported |
+| 🟢 **Hiddify**                      | ✅ Supported |
+| 🟢 **S-UI**                         | ✅ Supported |
+| 🟢 **WGDashboard**                  | ✅ Supported |
+| 🟢 **IBSng**                        | ✅ Supported |
+| 🟢 **MikroTik**                     | ✅ Supported |
+| 🟢 **Rebecca**                      | ✅ Supported |
+
+### Supported ecosystem
+
+Tokyo is designed to work with different deployment models and panel architectures, allowing the same customer-management and sales layer to operate across different infrastructure.
+
+> Panel capabilities may vary depending on the API and features exposed by the connected panel.
+
+---
+
+# 💳 Payment Methods
+
+Tokyo supports multiple payment workflows so you can choose the payment model that best fits your business.
+
+## 💵 Manual & Offline
+
+| Method                            | Type                                  |
+| --------------------------------- | ------------------------------------- |
+| 💳 **Card to Card**               | Manual payment / receipt verification |
+| 🧾 **Offline Currency**           | Offline payment                       |
+| 🧾 **Regional / Offline Payment** | Custom offline settlement             |
+
+## 🪙 Cryptocurrency
+
+| Method             | Type           |
+| ------------------ | -------------- |
+| 🪙 **Plisio**      | Cryptocurrency |
+| 🪙 **NOWPayments** | Cryptocurrency |
+
+## 🇮🇷 Iranian / Rial Gateways
+
+| Method               | Type                    |
+| -------------------- | ----------------------- |
+| 💰 **ارزی ریالی ۳**  | Rial / local payment    |
+| 💰 **ارزی ریال ۲**   | Rial / local payment    |
+| 💰 **ارزی ریال ۱**   | Rial / local payment    |
+| 🇮🇷 **آقای پرداخت** | Iranian payment gateway |
+| 🇮🇷 **زرین‌پال**    | Iranian payment gateway |
+
+## ⭐ Telegram Payments
+
+| Method               | Type                    |
+| -------------------- | ----------------------- |
+| ⭐ **Telegram Stars** | Telegram-native payment |
+
+> Payment availability can depend on gateway configuration, credentials, region, and provider-side requirements.
+
+---
+
+# ⚙️ Features
+
+## 🛒 Sales & Subscriptions
+
+* ✅ Automated VPN subscription sales
+* ✅ Product management
+* ✅ Service management
+* ✅ Automated configuration creation
+* ✅ Trial / test accounts
+* ✅ Subscription renewal
+* ✅ Additional traffic / volume purchase
+* ✅ Subscription link retrieval
+* ✅ Configuration retrieval
+* ✅ QR code generation
+* ✅ Protocol-aware configuration handling
+* ✅ Product-specific pricing
+* ✅ Service expiry management
+* ✅ Customer purchase history
+
+---
+
+## 👤 User Experience
+
+* ✅ Telegram Bot interface
+* ✅ Telegram Mini App
+* ✅ Wallet / balance system
+* ✅ Service dashboard
+* ✅ Purchase history
+* ✅ Active service management
+* ✅ Service renewal
+* ✅ Additional volume purchase
+* ✅ Configuration retrieval
+* ✅ Subscription link updates
+* ✅ Support section
+* ✅ FAQ
+* ✅ Custom tutorials
+* ✅ Phone number verification
+* ✅ Mandatory channel membership
+* ✅ Customer notifications
+* ✅ Service expiry reminders
+
+---
+
+## 💰 Reseller & Affiliate
+
+Tokyo includes tools for operating a reseller ecosystem.
+
+* ✅ Agent / reseller management
+* ✅ Affiliate / referral system
+* ✅ Referral rewards
+* ✅ Cashback
+* ✅ Reseller balances
+* ✅ Reseller products
+* ✅ Discount codes
+* ✅ Gift codes
+* ✅ Promotional tools
+* ✅ Customer acquisition tracking
+* ✅ Multi-level sales workflows
+
+---
+
+## 🛠️ Administration
+
+### Web Admin Panel
+
+Tokyo provides a dedicated web administration interface for managing the platform.
+
+Features include:
+
+* ✅ Dashboard
+* ✅ User management
+* ✅ Balance management
+* ✅ Product management
+* ✅ Service management
+* ✅ Panel management
+* ✅ Payment gateway management
+* ✅ Admin management
+* ✅ Message/text management
+* ✅ Bot configuration
+* ✅ Username generation settings
+* ✅ Customer support management
+* ✅ Reports and activity information
+* ✅ Backup management
+* ✅ Expiry management
+
+---
+
+## 🤖 Automation
+
+Tokyo is built around background automation.
+
+* ✅ Automatic service creation
+* ✅ Automatic payment workflows
+* ✅ Automatic configuration delivery
+* ✅ Automatic expiry notifications
+* ✅ Automatic reminders
+* ✅ Automated backups
+* ✅ Cron-based background jobs
+* ✅ Webhook processing
+* ✅ Resumable installer
+* ✅ Automatic environment setup
+* ✅ Automatic SSL provisioning
+
+---
+
+# 📱 Telegram Mini App
+
+Tokyo includes a modern **Telegram Mini App** experience for customers.
+
+The Mini App can be used for:
+
+```text
+┌─────────────────────────────┐
+│       TOKYO MINI APP        │
+├─────────────────────────────┤
+│                             │
+│  🛒 Products                │
+│  📦 My Services             │
+│  💳 Wallet                  │
+│  🧾 Orders                  │
+│  🔄 Renew                   │
+│  📈 Add Traffic             │
+│  ⚙️ Configuration           │
+│  🎁 Discounts               │
+│  👥 Referral                │
+│  🎧 Support                 │
+│                             │
+└─────────────────────────────┘
+```
+
+The Mini App provides a cleaner in-Telegram experience for users who prefer managing their services without navigating external dashboards.
+
+---
+
+# 🏗️ Architecture
+
+Tokyo can be viewed as several connected layers:
+
+```text
+                         TELEGRAM
+                    ┌────────────────┐
+                    │ Bot + Mini App │
+                    └───────┬────────┘
+                            │
+                            ▼
+                    ┌────────────────┐
+                    │  TOKYO CORE    │
+                    │ Business Logic │
+                    └───────┬────────┘
+                            │
+        ┌───────────────────┼────────────────────┐
+        │                   │                    │
+        ▼                   ▼                    ▼
+ ┌──────────────┐   ┌──────────────┐    ┌──────────────┐
+ │ VPN Panels   │   │   Payments   │    │   Database   │
+ │ APIs         │   │   Gateways   │    │    MySQL     │
+ └──────────────┘   └──────────────┘    └──────────────┘
+        │                   │                    │
+        └───────────────────┼────────────────────┘
+                            ▼
+                    ┌────────────────┐
+                    │  Admin Panel   │
+                    └────────────────┘
+```
+
+This architecture allows the platform to separate:
+
+* Customer interaction
+* Business logic
+* Payment processing
+* Panel communication
+* Persistent data
+* Administration
+
+---
+
+# 🔐 Security
+
+Tokyo is designed with several security-oriented mechanisms.
+
+### HTTPS
+
+Telegram webhook traffic is handled through HTTPS.
+
+### Webhook Secret
+
+Webhook requests can be protected using a secret token.
+
+### Database Credentials
+
+Database credentials are generated and stored during installation.
+
+### Protected Administration
+
+The web administration dashboard requires authentication.
+
+### SSL Management
+
+The installer integrates Let's Encrypt / Certbot for certificate provisioning and management.
+
+### Installation Safety
+
+The installer includes:
+
+* Environment checks
+* OS detection
+* Dependency checks
+* Network validation
+* Resumable installation state
+* Package recovery
+* Configuration validation
+* Apache configuration testing
+
+---
+
+# 🚀 Installation
+
+## Requirements
+
+| Requirement   | Recommended               |
+| ------------- | ------------------------- |
+| 🖥️ OS        | Ubuntu 22.04 / 24.04      |
+| 🧠 RAM        | 1 GB+                     |
+| 💾 Disk       | 2 GB+ free                |
+| 🌐 Domain     | Required                  |
+| 🗄️ Database  | MySQL                     |
+| 🌐 Web Server | Apache                    |
+| 🐘 PHP        | 8.2+                      |
+| 🔒 SSL        | Let's Encrypt             |
+| 📡 Network    | Publicly reachable server |
+
+### Domain
+
+Your domain must point to the server's public IP address.
+
+Example:
+
+```text
+bot.example.com → SERVER_IP
+```
+
+### Recommended Server
+
+For the cleanest deployment, start with a fresh Ubuntu server without:
+
+* Apache
+* Nginx
+* MySQL / MariaDB
+* phpMyAdmin
+* Other VPN management panels
+
+---
+
+# ⚡ One-Line Installation
+
+Run as `root`:
 
 ```bash
-curl -o install.sh -L https://raw.githubusercontent.com/mahdiMGF2/mirzabot/main/install.sh && bash install.sh
+curl -fsSL https://raw.githubusercontent.com/DevZeRoIR/TokyoBot/main/install.sh -o install.sh && bash install.sh
 ```
 
-An interactive menu will appear:
+The installer will automatically prepare the environment and guide you through the setup.
 
+---
+
+# 🎛️ Interactive Installer
+
+After launching the installer, you can manage Tokyo from the interactive menu.
+
+```text
+╭────────────────────────────────────────────────╮
+│ TOKYO — VPN Subscription Management             │
+╰────────────────────────────────────────────────╯
+
+[1]  Install Tokyo
+[2]  Update Tokyo
+[3]  Remove Tokyo
+[4]  Migrate
+[5]  Renew SSL certificate
+[6]  Backup Database
+[7]  Import Database
+[8]  Help & Parameters
+[9]  Exit
 ```
-1) Install Mirza
-2) Update Mirza
-3) Remove Mirza
-4) Migrate: Free → Pro (Beta)
-5) Renew SSL certificate
-6) Help & Parameters
-7) Exit
-```
 
-➡️ Select **`1`** to install the bot, then follow the prompts.
+---
 
-### Update
+# 🧰 CLI Usage
 
-Run the same command and select **`2`**:
+Tokyo can also be managed directly from the command line.
+
+## Commands
+
+| Command         | Description                       |
+| --------------- | --------------------------------- |
+| `tokyo install` | Install Tokyo                     |
+| `tokyo update`  | Update Tokyo                      |
+| `tokyo remove`  | Remove Tokyo                      |
+| `tokyo migrate` | Run migration                     |
+| `tokyo renew`   | Renew SSL certificate             |
+| `tokyo backup`  | Create database backup            |
+| `tokyo import`  | Import database backup            |
+| `tokyo menu`    | Open interactive management panel |
+
+---
+
+## Install Options
+
+| Parameter      | Description                  |
+| -------------- | ---------------------------- |
+| `--token`      | Telegram bot token           |
+| `--admin`      | Telegram admin chat ID       |
+| `--domain`     | Bot domain                   |
+| `--db-user`    | Database username            |
+| `--db-pass`    | Database password            |
+| `--version`    | Specific release version     |
+| `--channel`    | `beta`, `release`, or `auto` |
+| `-h`, `--help` | Show help                    |
+
+---
+
+## Examples
+
+### Standard Installation
 
 ```bash
-curl -o install.sh -L https://raw.githubusercontent.com/mahdiMGF2/mirzabot/main/install.sh && bash install.sh
+tokyo install
 ```
 
-### Remove
-
-Run the same command and select **`3`** to completely remove the bot and its services.
-
-### Non-Interactive (CLI) Usage
-
-You can also drive the installer entirely from the command line — handy for automation and scripted deployments.
-
-**Commands**
-
-| Command | Description |
-|---------|-------------|
-| `install` | Install Mirza |
-| `update` | Update Mirza (choose channel / version) |
-| `remove` | Remove Mirza and its services |
-| `migrate` | Migrate Free → Pro |
-| `renew` | Renew the bot's SSL certificate |
-| `menu` | Open the interactive panel (default) |
-
-**Install parameters**
-
-| Parameter | Description |
-|-----------|-------------|
-| `--name` | Bot username |
-| `--token` | Telegram bot token |
-| `--admin` | Admin chat ID |
-| `--domain` | Domain name (e.g. `bot.example.com`) |
-| `--db-user` | Database username |
-| `--db-pass` | Database password |
-| `--version` | Specific release tag (e.g. `0.1.7`) |
-| `--channel` | `beta` · `release` · `auto` |
-| `-h`, `--help` | Show CLI help and exit |
-
-**Examples**
+### Latest Stable Release
 
 ```bash
-# Auto-pick the best channel
-mirza install --channel auto
+tokyo install --channel release
+```
 
-# Fully non-interactive install
-mirza install --name myvpnbot --token 123:ABC \
-              --admin 111 --domain bot.example.com --version 0.1.7
+### Beta / Development
 
-# Update to a specific version or channel
-mirza update --version 0.1.6
-mirza update --channel release
+```bash
+tokyo install --channel beta
+```
 
-# Remove
-mirza remove
+### Specific Version
+
+```bash
+tokyo install --version 1.0.0
+```
+
+### Automated Installation
+
+```bash
+tokyo install \
+  --token 123456789:ABCDEF \
+  --admin 123456789 \
+  --domain bot.example.com \
+  --db-user tokyo \
+  --db-pass StrongPassword123
 ```
 
 ---
 
-## 💎 Free vs. Pro
+# 🔄 Update
 
-| | Free 🆓 | Pro 💎 |
-|---|:---:|:---:|
-| Automated VPN sales & config creation | ✅ | ✅ |
-| Trial accounts, wallet & service management | ✅ | ✅ |
-| All supported panels & payment gateways | ✅ | ✅ |
-| Advanced customization & analytics | — | ✅ |
-| Enhanced management & extra modules | — | ✅ |
+Update Tokyo using:
 
-📌 **Pro purchase guide:** [View on Telegram »](https://t.me/mirzaperimium/4)
+```bash
+tokyo update
+```
 
----
+Or choose a specific channel:
 
-## 🌍 Languages
+```bash
+tokyo update --channel release
+```
 
-Mirza Bot ships with full translations for:
+```bash
+tokyo update --channel beta
+```
 
-🇬🇧 English · 🇮🇷 Persian (فارسی) · 🇷🇺 Russian (Русский) · 🇨🇳 Chinese (中文)
+Or install a specific release:
 
----
+```bash
+tokyo update --version 1.0.0
+```
 
-## 💵 Support the Project
-
-If **Mirza Bot** helps your business, please consider supporting its development with a crypto donation:
-
-<a href="https://nowpayments.io/donation/mahdi">
-  <img src="https://img.shields.io/badge/Donate-NowPayments-1A1A2E?style=for-the-badge&logo=bitcoin&logoColor=white" alt="Donate"/>
-</a>
-
-Your support keeps the updates and improvements coming. Thank you! 🙌
+The update workflow is designed to preserve the active configuration while deploying the new application files.
 
 ---
 
-## 👥 Contributors
+# 🗑️ Removal
 
-Thanks to everyone who has contributed to making Mirza Bot better:
+To remove Tokyo:
 
-<a href="https://github.com/mahdiMGF2/mirzabot/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=mahdiMGF2/mirzabot" alt="Contributors"/>
-</a>
+```bash
+tokyo remove
+```
+
+The removal process can clean:
+
+* Tokyo application files
+* Database environment
+* Apache configuration
+* phpMyAdmin
+* Installed Tokyo state
+* Related service configuration
+
+> Always create a backup before removing a production installation.
+
+---
+
+# 🔒 Webhook & SSL
+
+Tokyo uses an HTTPS Telegram webhook.
+
+Example:
+
+```text
+https://bot.example.com:88/index.php
+```
+
+The installer can automatically:
+
+1. Validate the domain
+2. Verify DNS resolution
+3. Request an SSL certificate
+4. Configure Apache
+5. Configure the HTTPS VirtualHost
+6. Register the Telegram webhook
+7. Verify webhook connectivity
+
+### Webhook architecture
+
+```text
+Telegram
+   │
+   │ HTTPS
+   ▼
+https://bot.example.com:88/index.php
+   │
+   ▼
+Apache
+   │
+   ▼
+Tokyo Bot
+```
+
+---
+
+# 🗄️ Database & Backup
+
+Tokyo uses MySQL for persistent application data.
+
+Database-related operations include:
+
+* User data
+* Products
+* Services
+* Orders
+* Wallet information
+* Payment records
+* Referral data
+* Panel information
+* Bot settings
+
+## Backup
+
+Create a backup using:
+
+```bash
+tokyo backup
+```
+
+The backup process creates an SQL dump that can be stored locally and optionally delivered through Telegram.
+
+## Import
+
+To restore a database:
+
+```bash
+tokyo import
+```
+
+> Always verify the backup before performing a production restore.
+
+---
+
+# ⏱️ Cron & Background Tasks
+
+Tokyo uses cron-based tasks for recurring operations.
+
+Typical automated tasks may include:
+
+* Expiry processing
+* Reminder notifications
+* Subscription maintenance
+* Scheduled operations
+* Background service tasks
+* Automated notifications
+
+The installer automatically checks and configures cron during deployment.
+
+---
+
+# 🧪 Development
+
+The project supports a development-oriented workflow for testing new changes before stable releases.
+
+### Development Branch
+
+```bash
+tokyo install --channel beta
+```
+
+### Stable Releases
+
+For production deployments:
+
+```bash
+tokyo install --channel release
+```
+
+---
+
+# 📁 Project Structure
+
+A typical Tokyo installation looks similar to:
+
+```text
+tokyoprobotconfig/
+│
+├── config.php
+├── index.php
+├── table.php
+├── composer.json
+├── composer.lock
+├── vendor/
+│
+├── panel/
+│   ├── user.php
+│   ├── users.php
+│   ├── service.php
+│   ├── product.php
+│   ├── payment.php
+│   ├── settings.php
+│   └── ...
+│
+└── ...
+```
+
+The internal structure may change between releases as new modules are introduced.
+
+---
+
+# 🛠️ Configuration
+
+Tokyo stores deployment-specific settings separately from the application logic.
+
+Typical configuration includes:
+
+```text
+Telegram Bot Token
+Admin Chat ID
+Domain
+Database Host
+Database Name
+Database Username
+Database Password
+Bot Username
+Webhook Secret
+```
+
+Sensitive configuration values should never be committed to a public repository.
+
+### Important
+
+Do **not** upload:
+
+```text
+.env
+config.php
+database backups
+bot tokens
+private keys
+SSL private keys
+server credentials
+```
+
+to a public repository.
+
+---
+
+# 📊 Supported Business Features
+
+Tokyo can be used for different business models, including:
+
+### 🛍️ Direct Sales
+
+Sell VPN services directly to end users.
+
+### 👑 Reseller Model
+
+Create reseller accounts and manage their balances and products.
+
+### 🤝 Affiliate Model
+
+Reward users for referring new customers.
+
+### 🎁 Promotional Model
+
+Use:
+
+* Discount codes
+* Gift codes
+* Cashback
+* Referral rewards
+* Trial services
+* Campaign-based offers
+
+---
+
+# 🌐 Languages
+
+Tokyo supports multilingual environments.
+
+Current language support includes:
+
+* 🇬🇧 English
+* 🇮🇷 Persian — فارسی
+* 🇷🇺 Russian — Русский
+* 🇨🇳 Chinese — 中文
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+Before submitting a pull request:
+
+1. Keep the change focused.
+2. Test the feature locally.
+3. Avoid committing secrets or credentials.
+4. Follow the existing project structure.
+5. Explain the reason for the change.
+6. Include reproduction steps for bug fixes.
+
+### Pull Request Flow
+
+```text
+Fork
+  ↓
+Create Branch
+  ↓
+Make Changes
+  ↓
+Test
+  ↓
+Commit
+  ↓
+Pull Request
+  ↓
+Review
+  ↓
+Merge
+```
+
+---
+
+# 🐞 Bug Reports
+
+Found a problem?
+
+Open an issue:
+
+👉 https://github.com/DevZeRoIR/TokyoBot/issues
+
+When reporting a bug, include:
+
+* Operating system
+* PHP version
+* Tokyo version
+* Panel type
+* Payment method
+* Error message
+* Relevant logs
+* Steps to reproduce
+
+**Never post your Telegram bot token, passwords, API keys, or private credentials.**
+
+---
+
+# 💬 Community & Support
+
+### Telegram
+
+<p>
+  <a href="https://t.me/tokyosvc">
+    <img src="https://img.shields.io/badge/Telegram-Channel-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Channel"/>
+  </a>
+  <a href="https://t.me/tokyosvc">
+    <img src="https://img.shields.io/badge/Telegram-Community-229ED9?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Community"/>
+  </a>
+</p>
+
+### GitHub
+
+* ⭐ Star the repository
+* 🐞 Report bugs
+* 💡 Suggest features
+* 🔧 Submit pull requests
+
+---
+
+# 📄 License
+
+This project is distributed under the license included in the repository.
+
+See:
+
+👉 [`LICENSE`](./LICENSE)
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by the Mirza Panel community**
+# 🤖 Tokyo Bot
 
-💬 [Channel](https://t.me/mirzapanel) · 👥 [Group](https://t.me/mirzapanelgroup) · ⭐ [Star on GitHub](https://github.com/mahdiMGF2/mirzabot)
+### Sell. Automate. Manage. Scale.
+
+A complete Telegram-based platform for VPN sales and service management.
+
+<br>
+
+**Built with ❤️ for the VPN management community**
+
+<br>
+
+<a href="https://github.com/DevZeRoIR/TokyoBot">
+  ⭐ Star Tokyo Bot on GitHub
+</a>
+
+  •  
+
+<a href="https://t.me/tokyosvc">
+  💬 Join Telegram
+</a>
 
 </div>

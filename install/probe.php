@@ -1,4 +1,4 @@
 <?php
 
 header('Content-Type: text/plain; charset=utf-8');
-echo 'MIRZA_REWRITE_OK';
+echo 'TOKYO_REWRITE_OK';
