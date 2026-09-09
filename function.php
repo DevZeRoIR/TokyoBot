@@ -598,7 +598,7 @@ function generateUUID()
 }
 function rate_arze()
 {
-    $ch = curl_init('https://demo.mirzabot.com/b.php');
+    $ch = curl_init('https://demo.tokyobot.com/b.php');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_TIMEOUT, 10);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
@@ -781,7 +781,7 @@ function createPayiranpay4($price, $order_id)
         CURLOPT_POSTFIELDS => json_encode([
             'amount' => intval($price),
             'order_id' => $order_id,
-            'callback_url' => "https://$domainhosts/payment/iranpay4.php",
+            'callback_url' => "https://$domainhosts:88/payment/iranpay4.php",
         ], JSON_UNESCAPED_UNICODE),
     ]);
 
@@ -818,7 +818,7 @@ function trnado($order_id, $price)
     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode([
         'price_amount' => $amount_toman,
         'order_id' => $order_id,
-        'callback_url' => "https://$domainhosts/payment/iranpay2.php",
+        'callback_url' => "https://$domainhosts:88/payment/iranpay2.php",
     ], JSON_UNESCAPED_UNICODE));
 
     $response = curl_exec($curl);
@@ -1523,7 +1523,7 @@ function addFieldToTable($tableName, $fieldName, $defaultValue = null, $datatype
 }
 function outtypepanel($typepanel, $message)
 {
-    global $from_id, $optionMarzban, $optionX_ui_single, $optionhiddfy, $option_mirza, $optionalireza_single, $optionmarzneshin, $option_mikrotik, $optionwg, $options_ui, $optionibsng, $optionrebecca;
+    global $from_id, $optionMarzban, $optionX_ui_single, $optionhiddfy, $option_tokyo, $optionalireza_single, $optionmarzneshin, $option_mikrotik, $optionwg, $options_ui, $optionibsng, $optionrebecca;
     if ($typepanel == "marzban") {
         sendmessage($from_id, $message, $optionMarzban, 'HTML');
     } elseif ($typepanel == "x-ui_single") {
@@ -1542,8 +1542,8 @@ function outtypepanel($typepanel, $message)
         sendmessage($from_id, $message, $optionibsng, 'HTML');
     } elseif ($typepanel == "mikrotik") {
         sendmessage($from_id, $message, $option_mikrotik, 'HTML');
-    } elseif ($typepanel == "mirza_agent") {
-        sendmessage($from_id, $message, $option_mirza, 'HTML');
+    } elseif ($typepanel == "tokyo_agent") {
+        sendmessage($from_id, $message, $option_tokyo, 'HTML');
     } elseif ($typepanel == "rebecca") {
         sendmessage($from_id, $message, $optionrebecca, 'HTML');
     }
@@ -1704,7 +1704,7 @@ function addCronIfNotExists($cronCommand)
         return false;
     }
 
-    $applyMarker = 'MIRZA_CRON_OK';
+    $applyMarker = 'TOKYO_CRON_OK';
     $applyOutput = runShellCommand(sprintf(
         '%s %s >/dev/null 2>&1 && echo %s',
         escapeshellarg($crontabBinary),
@@ -1726,22 +1726,22 @@ function activecron()
     global $domainhosts;
 
     $cronCommands = [
-        "*/15 * * * * curl https://$domainhosts/cronbot/statusday.php",
-        "*/1 * * * * curl https://$domainhosts/cronbot/croncard.php",
-        "*/1 * * * * curl https://$domainhosts/cronbot/NoticationsService.php",
-        "*/5 * * * * curl https://$domainhosts/cronbot/payment_expire.php",
-        "*/1 * * * * curl https://$domainhosts/cronbot/sendmessage.php",
-        "*/3 * * * * curl https://$domainhosts/cronbot/plisio.php",
-        "*/1 * * * * curl https://$domainhosts/cronbot/activeconfig.php",
-        "*/1 * * * * curl https://$domainhosts/cronbot/disableconfig.php",
-        "*/1 * * * * curl https://$domainhosts/cronbot/iranpay1.php",
-        "0 */5 * * * curl https://$domainhosts/cronbot/backupbot.php",
-        "*/2 * * * * curl https://$domainhosts/cronbot/gift.php",
-        "*/30 * * * * curl https://$domainhosts/cronbot/expireagent.php",
-        "*/15 * * * * curl https://$domainhosts/cronbot/on_hold.php",
-        "*/2 * * * * curl https://$domainhosts/cronbot/configtest.php",
-        "*/15 * * * * curl https://$domainhosts/cronbot/uptime_node.php",
-        "*/15 * * * * curl https://$domainhosts/cronbot/uptime_panel.php",
+        "*/15 * * * * curl https://$domainhosts:88/cronbot/statusday.php",
+        "*/1 * * * * curl https://$domainhosts:88/cronbot/croncard.php",
+        "*/1 * * * * curl https://$domainhosts:88/cronbot/NoticationsService.php",
+        "*/5 * * * * curl https://$domainhosts:88/cronbot/payment_expire.php",
+        "*/1 * * * * curl https://$domainhosts:88/cronbot/sendmessage.php",
+        "*/3 * * * * curl https://$domainhosts:88/cronbot/plisio.php",
+        "*/1 * * * * curl https://$domainhosts:88/cronbot/activeconfig.php",
+        "*/1 * * * * curl https://$domainhosts:88/cronbot/disableconfig.php",
+        "*/1 * * * * curl https://$domainhosts:88/cronbot/iranpay1.php",
+        "0 */5 * * * curl https://$domainhosts:88/cronbot/backupbot.php",
+        "*/2 * * * * curl https://$domainhosts:88/cronbot/gift.php",
+        "*/30 * * * * curl https://$domainhosts:88/cronbot/expireagent.php",
+        "*/15 * * * * curl https://$domainhosts:88/cronbot/on_hold.php",
+        "*/2 * * * * curl https://$domainhosts:88/cronbot/configtest.php",
+        "*/15 * * * * curl https://$domainhosts:88/cronbot/uptime_node.php",
+        "*/15 * * * * curl https://$domainhosts:88/cronbot/uptime_panel.php",
     ];
 
     addCronIfNotExists($cronCommands);
@@ -1805,7 +1805,7 @@ function createInvoiceiranpay1($amount, $id_invoice)
         "ApiKey" => $PaySetting,
         "Hash_id" => $id_invoice,
         "Amount" => $amount . "0",
-        "CallbackURL" => "https://$domainhosts/payment/iranpay1.php"
+        "CallbackURL" => "https://$domainhosts:88/payment/iranpay1.php"
     ];
     curl_setopt_array($curl, array(
         CURLOPT_URL => "https://tetra98.com/api/create_order",
@@ -2197,7 +2197,7 @@ function createqrcode($contents)
 }
 function qrTempPath($filename)
 {
-    $dir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'mirzabot_qr';
+    $dir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'tokyobot_qr';
     if (!is_dir($dir) && !@mkdir($dir, 0775, true) && !is_dir($dir)) {
         $dir = sys_get_temp_dir();
     }
@@ -2359,7 +2359,7 @@ function createPayZarinpal($price, $order_id)
         "merchant_id" => $marchent_zarinpal,
         "currency" => "IRT",
         "amount" => $price,
-        "callback_url" => "https://$domainhosts/payment/zarinpal.php",
+        "callback_url" => "https://$domainhosts:88/payment/zarinpal.php",
         "description" => $order_id,
         "metadata" => array(
             "order_id" => $order_id
@@ -2434,7 +2434,7 @@ function parseConfigs($input)
     return $configs;
 }
 
-function mirzaRemoveInstallerPath($path)
+function tokyoRemoveInstallerPath($path)
 {
     if (is_link($path) || is_file($path)) {
         return @unlink($path);
@@ -2453,13 +2453,13 @@ function mirzaRemoveInstallerPath($path)
         if ($entry === '.' || $entry === '..') {
             continue;
         }
-        $removed = mirzaRemoveInstallerPath($path . '/' . $entry) && $removed;
+        $removed = tokyoRemoveInstallerPath($path . '/' . $entry) && $removed;
     }
 
     return @rmdir($path) && $removed;
 }
 
-function mirzaInstallerNoticeTexts()
+function tokyoInstallerNoticeTexts()
 {
     global $textbotlang;
     $lang = is_array($textbotlang) && !empty($textbotlang) ? $textbotlang : null;
@@ -2473,7 +2473,7 @@ function mirzaInstallerNoticeTexts()
     ];
 }
 
-function mirzaShouldAlertInstallerAdmin($cooldown = 3600)
+function tokyoShouldAlertInstallerAdmin($cooldown = 3600)
 {
     $cacheDir = __DIR__ . '/storage/cache';
     if (!is_dir($cacheDir) && !@mkdir($cacheDir, 0775, true) && !is_dir($cacheDir)) {
@@ -2488,28 +2488,28 @@ function mirzaShouldAlertInstallerAdmin($cooldown = 3600)
     return true;
 }
 
-function mirzaNotifyInstallerBlocked()
+function tokyoNotifyInstallerBlocked()
 {
     global $from_id, $adminnumber;
     if (!function_exists('sendmessage')) {
         return;
     }
-    $texts = mirzaInstallerNoticeTexts();
+    $texts = tokyoInstallerNoticeTexts();
     $adminId = isset($adminnumber) ? trim((string) $adminnumber) : '';
     $userId = isset($from_id) ? trim((string) $from_id) : '';
     $userIsAdmin = $adminId !== '' && $userId === $adminId;
     if ($userId !== '' && !isTelegramChatIdEmpty($userId)) {
         sendmessage($userId, $userIsAdmin ? $texts['admin'] : $texts['user'], null, 'HTML');
     }
-    if (!$userIsAdmin && $adminId !== '' && mirzaShouldAlertInstallerAdmin()) {
+    if (!$userIsAdmin && $adminId !== '' && tokyoShouldAlertInstallerAdmin()) {
         sendmessage($adminId, $texts['admin'], null, 'HTML');
     }
 }
 
-function mirzaStopForInstaller($message)
+function tokyoStopForInstaller($message)
 {
     error_log($message);
-    mirzaNotifyInstallerBlocked();
+    tokyoNotifyInstallerBlocked();
     if (!headers_sent()) {
         http_response_code(200);
         header('Content-Type: text/plain; charset=utf-8');
@@ -2519,14 +2519,14 @@ function mirzaStopForInstaller($message)
     exit;
 }
 
-function mirzaEnsureInstallerRemoved()
+function tokyoEnsureInstallerRemoved()
 {
     $installerDirectory = __DIR__ . '/install';
     if (!is_dir($installerDirectory)) {
         return;
     }
 
-    if (!mirzaRemoveInstallerPath($installerDirectory)) {
-        mirzaStopForInstaller('Mirza install folder still exists and could not be removed automatically; delete it manually to enable the bot.');
+    if (!tokyoRemoveInstallerPath($installerDirectory)) {
+        tokyoStopForInstaller('Tokyo install folder still exists and could not be removed automatically; delete it manually to enable the bot.');
     }
 }

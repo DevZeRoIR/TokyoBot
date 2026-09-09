@@ -4,7 +4,7 @@ require_once 'request.php';
 ini_set('error_log', 'error_log');
 function alirezaCookiePath($code_panel)
 {
-    return sys_get_temp_dir() . '/mirza_alireza_' . md5((string) $code_panel) . '.cookie';
+    return sys_get_temp_dir() . '/tokyo_alireza_' . md5((string) $code_panel) . '.cookie';
 }
 function panel_login_cookie($code_panel)
 {
