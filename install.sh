@@ -2421,7 +2421,7 @@ EOF
     if [ -f "$CONFIG_PATH" ]; then
         URL_PATH=$(grep "^\$domainhosts" "$CONFIG_PATH" | cut -d"'" -f2)
         if [ -n "$URL_PATH" ]; then
-            run_step "Updating database tables" "curl -s 'https://$URL_PATH/table.php' > /dev/null" \
+            run_step "Updating database tables" "curl -s 'https://$URL_PATH:${TOKYO_HTTPS_PORT}/table.php' > /dev/null" \
                 || echo -e "\e[91mSetup script execution failed! Check logs.\033[0m"
         fi
     fi
